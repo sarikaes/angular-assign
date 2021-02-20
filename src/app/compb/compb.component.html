@@ -1,0 +1,27 @@
+<div class="table">
+<table border="2px">
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Email
+        </th>
+    </tr>
+    <tr *ngFor="let i of tabledata">
+
+        <td>
+            {{i.uname}}
+        </td>
+        <td>
+            {{i.fname}}&nbsp;{{i.lname}}
+            
+        <td>
+            {{i.email}}
+        </td>
+    </tr>
+</table>
+</div>
