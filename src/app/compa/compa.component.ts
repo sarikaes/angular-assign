@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CompService } from '../comp.service'
 
 @Component({
@@ -10,14 +10,14 @@ import { CompService } from '../comp.service'
 export class CompaComponent implements OnInit {
   userForm: FormGroup;
 
-  constructor(private compService: CompService) {
+  constructor(private fb:FormBuilder,private compService: CompService) {
 
-    this.userForm = new FormGroup({
-      uname: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern("[a-z0-9]*")]),
-      fname: new FormControl('', [Validators.required]),
-      lname: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.email]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9]*')])
+    this.userForm = this.fb.group({
+      uname:['', [Validators.required, Validators.minLength(8), Validators.pattern("[a-z0-9]*")]],
+      fname:['', [Validators.required]],
+      lname: ['', [Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
+      phone: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9]*')]]
     })
   }
   get uname() { return this.userForm.get('uname'); }

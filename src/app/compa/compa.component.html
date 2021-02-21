@@ -1,4 +1,4 @@
-<div>
+
 <div class="head"> 
     <h1>Details</h1>
 
@@ -17,7 +17,7 @@
     User Name must be at least 8 characters long.
     </div>
     <div *ngIf="uname?.errors?.pattern">
-        User Name is not valid
+        Please Enter Valid Username
         </div>
       </div>
     </mat-form-field><br>
@@ -29,7 +29,7 @@
       class="alert alert-danger">
   
     <div *ngIf="fname?.errors?.required">
-       First Name is required.
+       First Name is required
     </div>
     </div>
 
@@ -41,16 +41,23 @@
       class="alert alert-danger">
   
     <div *ngIf="lname?.errors?.required">
-       Last Name is required.
+       Last Name is required
     </div>
     </div>
       </mat-form-field><br>
       <mat-form-field class="example-full-width">
         <mat-label>Email:</mat-label>
         <input matInput  class="formControl" formControlName="email" required>
+        <div *ngIf="userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)"
+      class="alert alert-danger">
+        <div *ngIf="email?.errors?.required">
+          Email is required
+
+       </div>
         <div *ngIf="email?.errors?.email">
-            Email is invalid
+            Please Enter Valid Email
          </div>
+        </div>
       </mat-form-field><br>
       <mat-form-field class="example-full-width">
         <mat-label>Phonenumber:</mat-label>
@@ -67,14 +74,13 @@
           Phonenumber must be at least 10 digits.
           </div>
           <div *ngIf="phone?.errors?.pattern">
-            Phonenumber must be number.
+            Phonenumber must be number
             </div>
           
         </div>
       </mat-form-field><br>
-      <button  type="submit" color="primary" [disabled]="!userForm.valid">Submit</button>
+      <button  type="submit" style="background:forestgreen;" [disabled]="!userForm.valid">Submit</button>
 
   </form>
-</div>
 
   
