@@ -17,7 +17,7 @@ export class CompaComponent implements OnInit {
       fname:['', [Validators.required]],
       lname: ['', [Validators.required]],
       email: ['', [Validators.required,Validators.email]],
-      phone: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9]*')]]
+      phone: ['', [Validators.required, Validators.pattern('[0-9]{10}$')]]
     })
   }
   get uname() { return this.userForm.get('uname'); }

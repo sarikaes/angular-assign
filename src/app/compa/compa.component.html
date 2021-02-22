@@ -8,7 +8,7 @@
     <input matInput placeholder="Username" class="formControl" formControlName="uname" required>
     <mat-error
       *ngIf="userForm.controls.uname.invalid && (userForm.controls.uname.dirty || userForm.controls.uname.touched)"
-      class="alert alert-danger">
+    >
 
       <span *ngIf="uname?.errors?.required">
         User Name is required.
@@ -28,7 +28,7 @@
     <input matInput class="formControl" formControlName="fname" required>
     <mat-error
       *ngIf="userForm.controls.fname.invalid && (userForm.controls.fname.dirty || userForm.controls.fname.touched)"
-      class="alert alert-danger">
+    >
 
       <span *ngIf="fname?.errors?.required">
         First Name is required
@@ -41,7 +41,7 @@
     <input matInput class="formControl" formControlName="lname" required>
     <mat-error
       *ngIf="userForm.controls.lname.invalid && (userForm.controls.lname.dirty || userForm.controls.lname.touched)"
-      class="alert alert-danger">
+      >
 
       <span *ngIf="lname?.errors?.required">
         Last Name is required
@@ -70,16 +70,16 @@
 
     <mat-error
       *ngIf="userForm.controls.phone.invalid && (userForm.controls.phone.dirty || userForm.controls.phone.touched)"
-      class="alert alert-danger">
+    >
 
       <span *ngIf="phone?.errors?.required">
         Phone number is required.
       </span>
-      <span *ngIf="phone?.errors?.minlength">
+      <!-- <span *ngIf="phone?.errors?.minlength">
         Phonenumber must be at least 10 digits.
-      </span>
+      </span> -->
       <span *ngIf="phone?.errors?.pattern">
-        Phonenumber must be number
+        Phonenumber is invalid
       </span>
 
     </mat-error>
