@@ -1,7 +1,7 @@
-<h2 style="text-align: center; margin-top: 10px; color:maroon;">Datas</h2>
+<h2>Datas</h2>
 <div class="table" >
 <table border="2px">
-    <tr style="box-shadow: inset; width: 300px;">
+    <tr >
         <th>
             Username
         </th>
@@ -9,16 +9,16 @@
             Name
         </th>
         <th>
-            Email
+           Email
         </th>
     </tr>
-    <tr *ngFor="let i of tabledata">
+    <tr *ngFor="let i of tables">
 
         <td>
-            {{i.uname}}
+            {{i.userName}}
         </td>
         <td>
-            {{i.fname}}&nbsp;{{i.lname}}
+            {{i.firstName}}&nbsp;{{i.lastName}}
             
         <td>
             {{i.email}}

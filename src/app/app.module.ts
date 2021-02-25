@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompaComponent } from './compa/compa.component';
@@ -28,7 +27,7 @@ import { CompService } from './comp.service';
     MatInputModule,
     MatTableModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [CompService],
   bootstrap: [AppComponent]

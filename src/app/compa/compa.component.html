@@ -1,89 +1,88 @@
+<div class="container">
 <div class="head">
   <h1>Details</h1>
-
 </div>
-<form class="example-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <mat-form-field class="example-full-width" appearance="outline">
-    <mat-label>User Name:</mat-label>
-    <input matInput placeholder="Username" class="formControl" formControlName="uname" required>
-    <mat-error
-      *ngIf="userForm.controls.uname.invalid && (userForm.controls.uname.dirty || userForm.controls.uname.touched)"
-    >
 
-      <span *ngIf="uname?.errors?.required">
-        User Name is required.
-      </span>
-      <span *ngIf="uname?.errors?.minlength">
-        User Name must be at least 8 characters long.
-      </span>
-      <span *ngIf="uname?.errors?.pattern">
-        Please Enter Valid Username
-      </span>
-    </mat-error>
-  </mat-form-field><br>
-  <span></span>
+<form class="example-form" [formGroup]="userForm">
+  <div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>User Name:</mat-label>
+      <input matInput placeholder="Username" class="formControl" formControlName="userName">
+      <mat-error
+        *ngIf="userForm.controls.userName.invalid && (userForm.controls.userName.dirty || userForm.controls.userName.touched)">
+        <span *ngIf="userName?.errors?.required">
+          User Name is required.
+        </span>
+        <span *ngIf="userName?.errors?.minlength">
+          User Name must be at least 8 characters long.
+        </span>
+        <span *ngIf="userName?.errors?.pattern">
+          Please Enter Valid Username
+        </span>
+      </mat-error>
+    </mat-form-field><br>
+  </div>
 
-  <mat-form-field class="example-full-width" appearance="outline">
-    <mat-label>Firstname:</mat-label>
-    <input matInput class="formControl" formControlName="fname" required>
-    <mat-error
-      *ngIf="userForm.controls.fname.invalid && (userForm.controls.fname.dirty || userForm.controls.fname.touched)"
-    >
+  <div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Firstname:</mat-label>
+      <input matInput class="formControl" formControlName="firstName">
+      <mat-error
+        *ngIf="userForm.controls.firstName.invalid && (userForm.controls.firstName.dirty || userForm.controls.firstName.touched)">
+        <span *ngIf="firstName?.errors?.required">
+          First Name is required
+        </span>
+      </mat-error>
+    </mat-form-field><br>
+  </div>
 
-      <span *ngIf="fname?.errors?.required">
-        First Name is required
-      </span>
-    </mat-error>
+  <div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Lastname:</mat-label>
+      <input matInput class="formControl" formControlName="lastName">
+      <mat-error
+        *ngIf="userForm.controls.lastName.invalid && (userForm.controls.lastName.dirty || userForm.controls.lastName.touched)">
+        <span *ngIf="lastName?.errors?.required">
+          Last Name is required
+        </span>
+      </mat-error>
+    </mat-form-field><br>
+  </div>
 
-  </mat-form-field><br>
-  <mat-form-field class="example-full-width" appearance="outline">
-    <mat-label>Lastname:</mat-label>
-    <input matInput class="formControl" formControlName="lname" required>
-    <mat-error
-      *ngIf="userForm.controls.lname.invalid && (userForm.controls.lname.dirty || userForm.controls.lname.touched)"
-      >
+  <div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Email:</mat-label>
+      <input matInput class="formControl" formControlName="email">
+      <mat-error
+        *ngIf="userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)">
+        <span *ngIf="email?.errors?.required">
+          Email is required
+        </span>
+        <span *ngIf="email?.errors?.email">
+          Please Enter Valid Email
+        </span>
+      </mat-error>
+    </mat-form-field><br>
+  </div>
 
-      <span *ngIf="lname?.errors?.required">
-        Last Name is required
-      </span>
-    </mat-error>
-  </mat-form-field><br>
-  <mat-form-field class="example-full-width" appearance="outline">
-    <mat-label>Email:</mat-label>
-    <input matInput class="formControl" formControlName="email" required>
-    <mat-error
-      *ngIf="userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)"
-      class="alert alert-danger">
-      <span *ngIf="email?.errors?.required">
-        Email is required
+  <div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Phonenumber:</mat-label>
+      <mat-icon matSuffix></mat-icon>
+      <input matInput class="formControl" formControlName="phone">
+      <mat-error
+        *ngIf="userForm.controls.phone.invalid && (userForm.controls.phone.dirty || userForm.controls.phone.touched)">
+        <span *ngIf="phone?.errors?.required">
+          Phone number is required.
+        </span>
+        <span *ngIf="phone?.errors?.pattern">
+          Phonenumber is invalid
+        </span>
+      </mat-error>
+    </mat-form-field><br>
+  </div>
 
-      </span>
-      <span *ngIf="email?.errors?.email">
-        Please Enter Valid Email
-      </span>
-    </mat-error>
-  </mat-form-field><br>
-  <mat-form-field class="example-full-width" appearance="outline">
-    <mat-label>Phonenumber:</mat-label>
-    <mat-icon matSuffix></mat-icon>
-    <input matInput class="formControl" formControlName="phone" required>
-
-    <mat-error
-      *ngIf="userForm.controls.phone.invalid && (userForm.controls.phone.dirty || userForm.controls.phone.touched)"
-    >
-
-      <span *ngIf="phone?.errors?.required">
-        Phone number is required.
-      </span>
-      <!-- <span *ngIf="phone?.errors?.minlength">
-        Phonenumber must be at least 10 digits.
-      </span> -->
-      <span *ngIf="phone?.errors?.pattern">
-        Phonenumber is invalid
-      </span>
-
-    </mat-error>
-  </mat-form-field><br>
-  <button type="submit" style="background:forestgreen;" [disabled]="!userForm.valid" appearance="outline">Submit</button>
+  <button type="submit" [disabled]="!userForm.valid" appearance="outline" (click)="onSubmit()">Submit</button>
 
 </form>
+</div>

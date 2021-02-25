@@ -1,6 +1,15 @@
+h2{
+    text-align: center;
+     margin-top: 10px; 
+     color:maroon;
+}
 .table{
     margin-left: 250px;
     width: 350px;
     padding-bottom: 100px;
 
+}
+.tr{
+    box-shadow: inset; 
+    width: 300px;
 }

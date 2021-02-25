@@ -13,18 +13,18 @@ export class CompaComponent implements OnInit {
   constructor(private fb:FormBuilder,private compService: CompService) {
 
     this.userForm = this.fb.group({
-      uname:['', [Validators.required, Validators.minLength(8), Validators.pattern("[a-z0-9]*")]],
-      fname:['', [Validators.required]],
-      lname: ['', [Validators.required]],
+      userName:['', [Validators.required, Validators.minLength(8), Validators.pattern("[a-z0-9]*")]],
+      firstName:['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       email: ['', [Validators.required,Validators.email]],
       phone: ['', [Validators.required, Validators.pattern('[0-9]{10}$')]]
     })
   }
-  get uname() { return this.userForm.get('uname'); }
+  get userName() { return this.userForm.get('userName'); }
+  get firstName() { return this.userForm.get('firstName'); }
+  get lastName() { return this.userForm.get('lastName'); }
   get phone() { return this.userForm.get('phone'); }
   get email() { return this.userForm.get('email'); }
-  get fname() { return this.userForm.get('fname'); }
-  get lname() { return this.userForm.get('lname'); }
 
   onSubmit() {
     this.compService.sentData(this.userForm.value)

@@ -9,7 +9,7 @@ export class CompService {
   dataAsobservable$=this.formData.asObservable()
 
   constructor() { }
-  sentData(data:any){
-    this.formData.next(data)
+  sentData(datas:any){
+    this.formData.next(datas)
   }
 }
